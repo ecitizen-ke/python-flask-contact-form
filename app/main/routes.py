@@ -1,14 +1,14 @@
 from flask import render_template, redirect, url_for, flash
-from . import main
+from . import main_bp
 from .forms import ContactForm
 
 
-@main.route("/")
+@main_bp.route("/")
 def home():
     return render_template("home.html")
 
 
-@main.route("/contact", methods=["GET", "POST"])
+@main_bp.route("/contact", methods=["GET", "POST"])
 def contact():
     form = ContactForm()
     if form.validate_on_submit():

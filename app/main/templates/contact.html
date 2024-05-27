@@ -1,4 +1,8 @@
- <h1>Contact Us</h1>
+ 
+ {% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Contact Us {% endblock %}</h1>
     <form method="POST" action="{{ url_for('main.contact') }}">
         {{ form.hidden_tag() }}
         <div>
@@ -20,3 +24,5 @@
             {{ form.submit() }}
         </div>
     </form>
+{% endblock %}
+
