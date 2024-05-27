@@ -2,8 +2,10 @@
  {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Contact Us {% endblock %}</h1>
-    <form method="POST" action="{{ url_for('main.contact') }}">
+
+<div style="height: 100vh;" class="container d-flex align-items-center flex-column">
+    <form id="form"  method="POST" action="{{ url_for('main.contact') }}">
+        <h1>{% block title %} Contact Us {% endblock %}</h1>
         {{ form.hidden_tag() }}
         <div>
             {{ form.name.label }}<br>
@@ -24,5 +26,6 @@
             {{ form.submit() }}
         </div>
     </form>
+</div>
 {% endblock %}
 
